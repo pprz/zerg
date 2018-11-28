@@ -14,13 +14,16 @@ use think\Request;
 use think\Validate;
 class BaseValidate extends Validate
 {
+    /**
+     * @return bool
+     * @throws ParameterException
+     */
     public function goCheck()
     {
         //必须设置contetn-type:application/json
         $request = Request::instance();
         $params = $request->param();
         $params['token'] = $request->header('token');
-
         if (!$this->check($params)) {
             $exception = new ParameterException(
                 [
@@ -31,5 +34,20 @@ class BaseValidate extends Validate
             throw $exception;
         }
         return true;
+    }
+
+    /**
+     * @param $value
+     * @param string $rule
+     * @param string $data
+     * @param string $field
+     * @return bool|string
+     */
+    public function isPositiveInteger($value, $rule='', $data='', $field='')
+    {
+        if (is_numeric($value) && is_int($value + 0) && ($value + 0) > 0) {
+            return true;
+        }
+        return $field . '必须是正整数';
     }
 }
