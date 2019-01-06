@@ -2,6 +2,9 @@ ThinkPHP 5.0
 ===============
 上线前：
   config.php: debug模式改成true
+  修改datebase.php
+  更改databse.php 调试模式
+  extra下setting file更改路径信息
   
 [![Total Downloads](https://poser.pugx.org/topthink/think/downloads)](https://packagist.org/packages/topthink/think)
 [![Latest Stable Version](https://poser.pugx.org/topthink/think/v/stable)](https://packagist.org/packages/topthink/think)

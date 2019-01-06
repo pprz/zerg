@@ -7,10 +7,9 @@
  */
 
 namespace app\lib\exception;
-use think\exception;
+use think\Exception as TpException;
 
-class BaseException extends Exception
-{
+class BaseException extends TpException{
     public $code = 400;
     public $msg = 'invalid parameters';
     public $errorCode = 999;

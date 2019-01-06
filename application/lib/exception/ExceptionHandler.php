@@ -9,7 +9,7 @@
 namespace app\lib\exception;
 
 
-use think\Exception;
+use Exception;
 use think\exception\Handle;
 use think\Log;
 use think\Request;
@@ -21,7 +21,7 @@ class ExceptionHandler extends Handle
     private $errorCode;
 
     /**
-     * @param Exception $e
+     * @param \Exception $e
      * @return \think\Response|\think\response\Json
      */
     public function render(Exception $e)
